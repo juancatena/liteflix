@@ -1,0 +1,86 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.navbar__menuLeft {
+  display: flex;
+  align-items: end;
+}
+
+.navbar__logo {
+  margin-left: 165px;
+  object-fit: contain;
+  width: 95px;
+  height: 27px;
+}
+
+.navbar__menu {
+  list-style: none;
+  display: flex;
+  color: white;
+  font-size: 14px;
+}
+
+.navbar__item {
+  margin-right: 18px;
+}
+
+.navbar__button {
+  width: 40px;
+  height: 40px;
+  background-color: red;
+  border: none;
+  color: white;
+  border-radius: 50%;
+  object-fit: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar__plus {
+  width: 15.9px;
+  height: 15px;
+  object-fit: contain;
+}
+
+.navbar__menuButton {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__menuRight {
+  display: flex;
+
+  align-items: center;
+}
+
+.navbar__menuRightText {
+  font-size: 14px;
+  font-weight: normal;
+  color: white;
+  margin-right: 20px;
+}
+
+.navbar__menuRightBell {
+  width: 14px;
+  height: 16px;
+  margin-right: 20px;
+  object-fit: contain;
+}
+
+.navbar__menuRightAvatar {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  object-fit: contain;
+}
+
+.navbar__menuRightArrow {
+  margin-right: 165px;
+}
