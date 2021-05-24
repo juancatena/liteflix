@@ -23,7 +23,7 @@
 }
 
 .row__posterLarge {
-  max-width: 255px;
+  width: 255px;
   height: 100%;
   object-fit: contain;
   margin-right: 30px;

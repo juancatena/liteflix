@@ -4,7 +4,16 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: 20px;
+  height: 80px;
+  z-index: 1;
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
+  align-items: center;
+  font-family: Montserrat;
+}
+
+.navbar__black {
+  background-color: #111;
 }
 
 .navbar__menuLeft {
@@ -19,15 +28,28 @@
   height: 27px;
 }
 
+.navbar__menuButton {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
 .navbar__menu {
   list-style: none;
   display: flex;
   color: white;
   font-size: 14px;
+  margin-left: 0px;
+  padding-left: 0px;
 }
 
 .navbar__item {
   margin-right: 18px;
+  cursor: pointer;
+}
+
+.navbar__itemActive {
+  font-weight: bold;
 }
 
 .navbar__button {
@@ -41,22 +63,36 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+
+.navbar__button:hover {
+  justify-content: start;
+  width: 183px;
+  background-color: red;
+  border-radius: 20px;
+  padding: 0px;
 }
 
 .navbar__plus {
   width: 15.9px;
   height: 15px;
   object-fit: contain;
+  margin: 12px;
 }
 
-.navbar__menuButton {
-  display: flex;
-  align-items: center;
+.navbar__plus:hover {
+  margin: 12px;
+}
+
+.navbar__add {
+  white-space: nowrap;
+  font-family: Montserrat;
+  font-size: 14px;
 }
 
 .navbar__menuRight {
   display: flex;
-
   align-items: center;
 }
 
@@ -74,13 +110,66 @@
   object-fit: contain;
 }
 
+.navbar__notification {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background-color: red;
+  position: fixed;
+  right: 233px;
+  top: 34px;
+}
+
 .navbar__menuRightAvatar {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar__avatarImg {
   width: 25px;
   height: 25px;
   margin-right: 10px;
   object-fit: contain;
+  padding-bottom: 4px;
 }
 
+.navbar__avatarMenu {
+  position: fixed;
+  top: 71px;
+  right: 165px;
+  width: 130px;
+  height: 218px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.navbar__avatarMenuRectangle {
+  position: fixed;
+  top: 65.5px;
+  right: 190.5px;
+  width: 17px;
+  height: 17px;
+  transform: rotate(-315deg);
+  border-radius: 5px;
+  background-color: white;
+}
+
+.navbar__topItem1 {
+  width: 111px;
+  height: 37px;
+  background-color: red;
+  border-radius: 18.5px;
+  margin: 11px 9px 0px 10px;
+  display: flex;
+}
+
+.navbar__itemOval {
+  width: 25px;
+  height: 25px;
+  margin-left: 2px;
+  border-radius: 50%;
+  background-color: blue;
+}
 .navbar__menuRightArrow {
   margin-right: 165px;
 }

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "../../utils/axios";
 import requests from "../../utils/requests";
 import "./Banner.css";
+import plus from "../../assets/images/plus.svg";
+import play from "../../assets/images/play.svg";
 
 function Banner() {
   const [movie, setMovie] = useState({});
@@ -30,16 +32,30 @@ function Banner() {
       }}
     >
       <div className="banner__contents">
+        <h2 className="banner__preTitle">
+          ORIGINAL DE <strong>LITEFLIX</strong>
+        </h2>
         <h1 className="banner__title">
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
 
         <div className="banner__buttons">
-          <button className="banner__button">Reproducir</button>
-          <button className="banner__button">Mi Lista</button>
+          <button className="banner__button">
+            <img className="banner__play" src={play} alt="play" /> Reproducir
+          </button>
+          <button className="banner__button">
+            {" "}
+            <img src={plus} alt="plus" className="banner__plus" /> Mi Lista
+          </button>
         </div>
-
-        <p className="banner__description">{truncate(movie?.overview, 150)}</p>
+        <div className="banner__description">
+          <h2 className="banner__descriptionTitle"></h2>
+          <p className="banner__descriptionText">
+            <strong> Ver temporada 1 </strong>
+            <br />
+            {movie?.overview}
+          </p>
+        </div>
       </div>
     </header>
   );
