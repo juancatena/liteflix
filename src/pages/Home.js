@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Children } from "react";
 import Row from "../components/row/Row";
 import requests from "../utils/requests";
 import Banner from "../components/banner/Banner";
@@ -24,14 +24,15 @@ function Home() {
     localStorage.setItem("movies", JSON.stringify(movie));
   }, [movie]);
 
-  const createNewMovie = (movieName) => {
+  const createNewMovie = (movieName, movieCategory, image) => {
+    console.log(movieName);
     if (!movie.find((movies) => movies.name === movieName)) {
-      setMovie([...movie, { name: movieName }]);
+      setMovie([
+        ...movie,
+        { name: movieName, category: movieCategory, image: image },
+      ]);
     }
   };
-
-  const movieRows = () =>
-    movie.map((movie) => <MyMoviesRow key={movie.name} nombre={movie.name} />);
 
   const handleModal = () => {
     setIsOpen(!isOpen);
@@ -50,11 +51,27 @@ function Home() {
           fetchUrl={requests.fetchPopular}
           isLargeRow
         />
+
         {movie.map((item) => {
           return (
-            <div key={item.name}>
-              <h1 className="nombre"> {item.name}</h1>
-            </div>
+            <MyMoviesRow
+              key={item.name}
+              name={item.name}
+              category={item.category}
+              src={item.image}
+              content={
+                <button
+                  onClick={() => {
+                    const newMovies = movie.filter(
+                      (mov) => mov.name !== item.name
+                    );
+                    setMovie(newMovies);
+                  }}
+                >
+                  ELMINIARRR
+                </button>
+              }
+            />
           );
         })}
       </div>
