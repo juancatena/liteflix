@@ -11,6 +11,21 @@
 }
 
 .row__poster {
+  width: 255px;
+  height: 155px;
+
+  margin-right: 30px;
+}
+
+.row__posterLarge {
+  width: 255px;
+  height: 380px;
+  object-fit: contain;
+  margin-right: 30px;
+}
+
+/*
+.row__poster {
   object-fit: contain;
   max-width: 255px;
   height: 100%;
@@ -32,3 +47,4 @@
 .row__posterLarge:hover {
   transform: scale(1.09);
 }
+*/

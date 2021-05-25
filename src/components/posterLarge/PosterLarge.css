@@ -1,0 +1,66 @@
+.posterLarge {
+  width: 255px;
+  height: 375px;
+  margin-right: 30px;
+}
+
+.posterLarge__hover {
+  display: flex;
+  flex-direction: column;
+}
+
+.posterLarge__hoverTop {
+  height: 163.56px;
+}
+
+.posterLarge__hoverBottom {
+  height: 211.44px;
+
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000000 82%);
+}
+
+.posterLarge__play {
+  margin: 35px 202px 7px 12px;
+}
+
+.posterLarge__text {
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.posterLarge__title {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: bold;
+  white-space: nowrap;
+  white-space: pre-wrap;
+}
+
+.posterLarge__info {
+  min-width: 200px;
+  height: 90px;
+  margin-left: 12px;
+}
+
+.posterLarge__ageDuration {
+  display: flex;
+}
+
+.posterLarge__arrow {
+  margin-top: 8px;
+  margin-left: 107px;
+}
+
+.posterLarge__middlePart {
+  display: flex;
+}
+
+.posterLarge__like {
+  margin-right: 10px;
+  margin-left: 3px;
+}

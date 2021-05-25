@@ -7,7 +7,7 @@ import arrow from "../../assets/images/arrow.svg";
 import MenuItem from "../menuItem/MenuItem";
 import "./Navbar.css";
 
-function Navbar() {
+function Navbar({ handleModal }) {
   const [show, handleShow] = useState(false);
   const [addFilm, setAddFilm] = useState(false);
   const [menuAvatar, setMenuAvatar] = useState(false);
@@ -47,6 +47,7 @@ function Navbar() {
             className="navbar__button hover"
             onMouseEnter={onMouseEnterAdd}
             onMouseLeave={onMouseLeaveAdd}
+            onClick={handleModal}
           >
             <img className="navbar__plus hover2" src={plus} alt="plus" />
             {addFilm && <p className="navbar__add"> Agregar película </p>}
