@@ -1,24 +1,18 @@
 import React, { useState, useEffect } from "react";
 import "./Modal.css";
-import Clip from "../../assets/images/clip.svg";
+
 import Arrow from "../../assets/images/arrow.svg";
+import Dropzone from "../dropzone/Dropzone";
 
 const Modal = (props) => {
   const [newMovieName, setNewMovieName] = useState("");
   const [newMovieCategory, setNewMovieCategory] = useState("");
   const [image, setImage] = useState("");
-  const [onImage, setOnImage] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const [progress, setProgress] = useState("");
 
-  const handleImageChange = (e) => {
-    if (e.target.files && e.target.files[0]) {
-      let reader = new FileReader();
-      reader.onload = function (e) {
-        setImage(e.target.result);
-        setOnImage(true);
-      };
-      reader.readAsDataURL(e.target.files[0]);
-    }
+  const recibeImagen = (image) => {
+    setImage(image);
   };
 
   useEffect(() => {
@@ -44,37 +38,9 @@ const Modal = (props) => {
         <span className="modal__close" onClick={props.handleClose}>
           x
         </span>
-        <>
-          <label className="modal__boxUpload" htmlFor="upload-input">
-            {!onImage ? (
-              <div className="modal__inBox">
-                {" "}
-                <img src={Clip} alt="placeholder" class="modal__clip" />
-                <p className="modal__boxText">
-                  <p className="modal__boxTextBold">Agregar archivo</p>o
-                  arrastrarlo y soltarlo aquí
-                </p>
-              </div>
-            ) : (
-              <div className="modal__inBoxOn">
-                <p className="modal__boxText">
-                  !Tu imagen a sido cargada{" "}
-                  <p className="modal__boxTextBold marginLeft">
-                    {" "}
-                    exitosamente!
-                  </p>
-                </p>
-              </div>
-            )}
-          </label>
-          <input
-            onDrop={handleImageChange}
-            type="file"
-            accept=".jpg,.jpeg,.gif,.png,.mov,.mp4"
-            onChange={handleImageChange}
-            id="upload-input"
-          />
-        </>
+
+        <Dropzone callback={recibeImagen} />
+        {/*<progress value={progress} max="100"></progress>*/}
         <div className="modal__inputs">
           <div className="modal__name">
             <h3 className="modal__title">NOMBRE DE LA PELICULA</h3>
@@ -87,98 +53,99 @@ const Modal = (props) => {
           </div>
           <div className="modal__category">
             <h3 className="modal__title">CATEGORIA</h3>
-            <button onClick={handleDropdown} className="modal__button">
-              <div
-                className={
-                  newMovieCategory === ""
-                    ? `modal__inButton`
-                    : `modal__inButton black`
-                }
-              >
-                <h3 className="modal__inButtonTitle">
-                  {newMovieCategory === ""
-                    ? "Selecciona una categoría"
-                    : newMovieCategory}
-                </h3>
-                <img src={Arrow} className="modal__arrow" alt="arrow" />
-              </div>
-              {dropdown && (
-                <div className="modal__dropdown">
-                  <div className="modal__dropdownButtons">
-                    <button
-                      className="modal__dropdowButton"
-                      value="Acción"
-                      onClick={updateNewMovieCategoryValue}
-                    >
-                      Acción
-                    </button>
-                    <button
-                      className="modal__dropdowButton"
-                      value="Animación"
-                      onClick={updateNewMovieCategoryValue}
-                    >
-                      Animación
-                    </button>
-                    <button
-                      className="modal__dropdowButton"
-                      value="Aventuras"
-                      onClick={updateNewMovieCategoryValue}
-                    >
-                      Aventuras
-                    </button>
-                    <button
-                      className="modal__dropdowButton"
-                      value="Ciencia Ficción"
-                      onClick={updateNewMovieCategoryValue}
-                    >
-                      Ciencia Ficción
-                    </button>
-                    <button
-                      className="modal__dropdowButton"
-                      value="Comedia"
-                      onClick={updateNewMovieCategoryValue}
-                    >
-                      Comedia
-                    </button>
-                    <button
-                      className="modal__dropdowButton"
-                      value="Documentales"
-                      onClick={updateNewMovieCategoryValue}
-                    >
-                      Documentales
-                    </button>
-                    <button
-                      className="modal__dropdowButton"
-                      value="Terror"
-                      onClick={updateNewMovieCategoryValue}
-                    >
-                      Terror
-                    </button>
-                    <button
-                      className="modal__dropdowButton"
-                      value="Romance"
-                      onClick={updateNewMovieCategoryValue}
-                    >
-                      Romance
-                    </button>
-                    <button
-                      className="modal__dropdowButton"
-                      value="Infantil"
-                      onClick={updateNewMovieCategoryValue}
-                    >
-                      Infantil
-                    </button>
-                    <button
-                      className="modal__dropdowButton last"
-                      value="Musical"
-                      onClick={updateNewMovieCategoryValue}
-                    >
-                      Musical
-                    </button>
-                  </div>
+            {!dropdown ? (
+              <button onClick={handleDropdown} className="modal__button">
+                <div
+                  className={
+                    newMovieCategory === ""
+                      ? `modal__inButton`
+                      : `modal__inButton black`
+                  }
+                >
+                  <h3 className="modal__inButtonTitle">
+                    {newMovieCategory === ""
+                      ? "Selecciona una categoría"
+                      : newMovieCategory}
+                  </h3>
+                  <img src={Arrow} className="modal__arrow" alt="arrow" />
                 </div>
-              )}
-            </button>
+              </button>
+            ) : (
+              <div className="modal__dropdown">
+                <div className="modal__dropdownButtons">
+                  <button
+                    className="modal__dropdowButton"
+                    value="Acción"
+                    onClick={updateNewMovieCategoryValue}
+                  >
+                    Acción
+                  </button>
+                  <button
+                    className="modal__dropdowButton"
+                    value="Animación"
+                    onClick={updateNewMovieCategoryValue}
+                  >
+                    Animación
+                  </button>
+                  <button
+                    className="modal__dropdowButton"
+                    value="Aventuras"
+                    onClick={updateNewMovieCategoryValue}
+                  >
+                    Aventuras
+                  </button>
+                  <button
+                    className="modal__dropdowButton"
+                    value="Ciencia Ficción"
+                    onClick={updateNewMovieCategoryValue}
+                  >
+                    Ciencia Ficción
+                  </button>
+                  <button
+                    className="modal__dropdowButton"
+                    value="Comedia"
+                    onClick={updateNewMovieCategoryValue}
+                  >
+                    Comedia
+                  </button>
+                  <button
+                    className="modal__dropdowButton"
+                    value="Documentales"
+                    onClick={updateNewMovieCategoryValue}
+                  >
+                    Documentales
+                  </button>
+                  <button
+                    className="modal__dropdowButton"
+                    value="Terror"
+                    onClick={updateNewMovieCategoryValue}
+                  >
+                    Terror
+                  </button>
+                  <button
+                    className="modal__dropdowButton"
+                    value="Romance"
+                    onClick={updateNewMovieCategoryValue}
+                  >
+                    Romance
+                  </button>
+                  <button
+                    className="modal__dropdowButton"
+                    value="Infantil"
+                    onClick={updateNewMovieCategoryValue}
+                  >
+                    Infantil
+                  </button>
+                  <button
+                    className="modal__dropdowButton last"
+                    value="Musical"
+                    onClick={updateNewMovieCategoryValue}
+                  >
+                    Musical
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </div>
         <button onClick={createNewMovie} className="modal__buttonUpload">

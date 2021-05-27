@@ -36,27 +36,6 @@
   font-weight: initial;
 }
 
-.modal__boxUpload {
-  width: 660px;
-  height: 100px;
-  margin-left: 35px;
-  margin-right: 35px;
-  margin-top: 30px;
-  border-radius: 10px;
-  border: 1px dashed #9b9b9b;
-  display: flex;
-}
-
-.modal__inBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal__boxText {
-  display: flex;
-}
-
 #upload-input {
   display: none;
 }
@@ -92,13 +71,13 @@
   border-left: none;
   border-bottom: 1px solid #0076ff;
   font-family: Montserrat;
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
-  letter-spacing: 1px;
-  color: black;
+  letter-spacing: normal;
+  color: #000000;
   margin-left: 2px;
   outline: none;
 }
@@ -138,28 +117,6 @@
   line-height: normal;
   letter-spacing: normal;
   color: white;
-}
-
-.modal__boxText {
-  margin-left: -35px;
-  font-family: Montserrat;
-  font-size: 16px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #9b9b9b;
-}
-
-.modal__boxTextBold {
-  color: #0076ff;
-  font-weight: bold;
-  margin-right: 5px;
-}
-
-.modal__clip {
-  margin-left: 95px;
 }
 
 .modal__inButtonTitle {
