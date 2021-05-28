@@ -86,51 +86,16 @@
   border-bottom: 1px solid #000000;
 }
 
-.modal__category {
-  margin-left: 30px;
+.marginLeft {
+  margin-left: 5px;
+}
+
+.modal__inBoxOn {
   display: flex;
-  flex-direction: column;
-}
+  justify-content: center;
+  align-items: center;
 
-.modal__categorySet {
-  width: 315px;
-  height: 28px;
-  margin-top: 8px;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-bottom: 1px solid #000000;
-  font-family: Montserrat;
-  font-size: 16px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #000000;
-  margin-left: 2px;
-  outline: none;
-}
-
-.modal__button {
-  width: 315px;
-  height: 31px;
-  margin-top: 8px;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-bottom: 1px solid #0076ff;
-  background-color: white;
-}
-
-.modal__buttonUpload {
-  width: 350px;
-  height: 70px;
-  background-color: #dedede;
-  border-radius: 35px;
-  border: none;
-  margin: 44px 190px 27px 190px;
-  cursor: not-allowed;
+  width: 100%;
 }
 
 .modal__buttonTitle {
@@ -144,102 +109,78 @@
   color: white;
 }
 
-.modal__inButtonTitle {
-  font-family: Montserrat;
-  font-size: 12px;
+.modal__buttonUpload {
+  width: 350px;
+  height: 70px;
+  background-color: #dedede;
+  border-radius: 35px;
+  border: none;
+  margin: 44px 190px 27px 190px;
+  cursor: not-allowed;
+}
+
+.modal__buttonUploadOk {
+  width: 350px;
+  height: 70px;
+  background-color: black;
+  border-radius: 35px;
+  border: none;
+  margin: 44px 190px 27px 190px;
+  cursor: pointer;
+}
+
+.modal__upload {
+  background-color: #7ed321;
+  border: none;
+}
+
+.modal__uploadContainer {
+  margin: 38px 159px 27px 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.modal__buttonClose {
+  width: 192px;
+  height: 70px;
+  background-color: black;
+  border-radius: 35px;
+  border: none;
+  cursor: pointer;
+}
+
+.modal__uploadTitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 32px;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
-  letter-spacing: 2px;
-  color: #9b9b9b;
-}
-
-.modal__inButton {
+  letter-spacing: normal;
+  color: white;
+  margin-top: 44px;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: nowrap;
 }
 
-.modal__arrow {
-  background-color: #9b9b9b;
-  border-radius: 2px;
-}
-
-.modal__dropdown {
-  display: flex;
-  flex-direction: column;
-  width: 315px;
-  max-height: 260px;
-  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
-  position: fixed;
-  background-color: white;
-  top: 321px;
-  right: 340px;
-  padding-top: 5.5px;
-  border-radius: 10px;
-}
-
-.modal__dropdowButton {
-  display: flex;
-  justify-content: start;
-  background-color: white;
+.modal__uploadDescription {
   font-family: Montserrat;
-  font-size: 16px;
+  font-size: 24px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-  line-height: 2.5;
+  line-height: normal;
   letter-spacing: normal;
-  color: #9b9b9b;
-  width: 235px;
-  margin-left: 20px;
-  height: 40.5px;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-bottom: 1px solid #cccccc;
-  cursor: pointer;
+  color: white;
+  margin-bottom: 51px;
 }
 
-.modal__dropdowButton:hover {
-  color: black;
+.bold {
+  font-weight: bold;
 }
 
-.modal__dropdownButtons::-webkit-scrollbar {
-  width: 11px;
-}
-
-.modal__dropdownButtons::-webkit-scrollbar-thumb {
-  background: #9b9b9b;
-  border-radius: 5.5px;
-  margin-right: 30px;
-  margin-top: 20px;
-}
-
-.modal__dropdownButtons {
-  overflow-y: scroll;
-
-  margin-right: 30px;
-  margin-bottom: 15px;
-}
-
-.last {
-  border: none;
-}
-
-.marginLeft {
-  margin-left: 5px;
-}
-
-.modal__inBoxOn {
+.modal__uploadInfo {
   display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 100%;
-}
-
-.black {
-  background-color: black;
-  cursor: pointer;
+  flex-direction: row;
 }

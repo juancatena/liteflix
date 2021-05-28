@@ -1,0 +1,130 @@
+.dropdown {
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown__title {
+  margin-top: 30px;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 5px;
+  color: #9b9b9b;
+}
+
+.dropdown__button {
+  width: 315px;
+  height: 31px;
+  margin-top: 8px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid #0076ff;
+  background-color: white;
+}
+
+.dropdown__inButton {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dropdown__buttonTitle {
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 2px;
+  color: #9b9b9b;
+}
+
+.dropdown__arrow {
+  background-color: #9b9b9b;
+  border-radius: 2px;
+}
+
+.dropdown__categorySet {
+  width: 315px;
+  height: 28px;
+  margin-top: 8px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid #000000;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
+  margin-left: 2px;
+  outline: none;
+}
+
+.dropdown__menu {
+  display: flex;
+  flex-direction: column;
+  width: 315px;
+  max-height: 260px;
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+  position: fixed;
+  background-color: white;
+  top: 321px;
+  right: 340px;
+  padding-top: 5.5px;
+  border-radius: 10px;
+}
+
+.dropdown__menuItems {
+  overflow-y: scroll;
+  margin-right: 30px;
+  margin-bottom: 15px;
+}
+
+.dropdown__menuItems::-webkit-scrollbar {
+  width: 11px;
+}
+
+.dropdown__menuItems::-webkit-scrollbar-thumb {
+  background: #9b9b9b;
+  border-radius: 5.5px;
+  margin-right: 30px;
+  margin-top: 20px;
+}
+
+.dropdpwn__menuItem {
+  display: flex;
+  justify-content: start;
+  background-color: white;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.5;
+  letter-spacing: normal;
+  color: #9b9b9b;
+  width: 235px;
+  margin-left: 20px;
+  height: 40.5px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid #cccccc;
+  cursor: pointer;
+}
+
+.dropdpwn__menuItem:hover {
+  color: black;
+}
+
+.last {
+  border: none;
+}

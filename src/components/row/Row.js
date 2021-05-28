@@ -6,7 +6,7 @@ import PosterLarge from "../posterLarge/PosterLarge";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
-function Row({ title, fetchUrl, isLargeRow }) {
+function Row({ title, fetchUrl, isLargeRow, fetchData, isMyMovie }) {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -25,23 +25,35 @@ function Row({ title, fetchUrl, isLargeRow }) {
       <h2>{title}</h2>
 
       <div className="row__posters">
-        {movies.map((movie) => {
-          return isLargeRow ? (
-            <PosterLarge
-              key={movie.id}
-              url={`
-            https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-              title={movie?.title || movie?.name || movie?.original_name}
-            />
-          ) : (
-            <Poster
-              key={movie.id}
-              url={`
-          https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
-              title={movie?.title || movie?.name || movie?.original_name}
-            />
-          );
-        })}
+        {isMyMovie
+          ? fetchData.map((item) => {
+              return (
+                <Poster
+                  key={item.image}
+                  url={item.image}
+                  title={item.name}
+                  category={item.category}
+                  data={fetchData}
+                />
+              );
+            })
+          : movies.map((movie) => {
+              return isLargeRow ? (
+                <PosterLarge
+                  key={movie.id}
+                  url={`
+              https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                  title={movie?.title || movie?.name || movie?.original_name}
+                />
+              ) : (
+                <Poster
+                  key={movie.id}
+                  url={`
+            https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
+                  title={movie?.title || movie?.name || movie?.original_name}
+                />
+              );
+            })}
       </div>
     </div>
   );

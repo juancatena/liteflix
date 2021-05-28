@@ -1,13 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Poster.css";
 import addList from "../../assets/images/add-list.svg";
 import playCircle from "../../assets/images/playCircle.svg";
 
-function Poster({ url, title, size }) {
+function Poster({ url, title, category, data }) {
+  const [hasCategory, setHasCategory] = useState("");
   const [hover, setHover] = useState(false);
+  const [newMovies, setNewMovies] = useState({});
+
+  console.log("movies", data);
 
   const handleMouseEnter = () => setHover(true);
   const handleMouseLeave = () => setHover(false);
+
+  useEffect(() => {
+    setHasCategory(category);
+  }, [category]);
+
+  const handleClick = () => {
+    const newMovies = data.filter((mov) => mov.name !== title);
+    console.log(newMovies);
+  };
 
   return (
     <div
@@ -27,7 +40,12 @@ function Poster({ url, title, size }) {
             <img className="poster__icon" src={addList} alt="addList" />{" "}
           </div>
           <div className="poster__middle">
-            <img className="poster__iconMiddle" src={playCircle} alt="play" />
+            <img
+              onClick={hasCategory && handleClick}
+              className="poster__iconMiddle"
+              src={playCircle}
+              alt="play"
+            />
           </div>
           <div className="poster__bottom">
             <h1 className="poster__title">{title}</h1>
@@ -39,7 +57,9 @@ function Poster({ url, title, size }) {
               <h1 className="poster__text">1h 30 min</h1>
             </div>
 
-            <h1 className="poster__text">Suspenso</h1>
+            <h1 className="poster__text">
+              {hasCategory ? category : `Suspenso`}
+            </h1>
           </div>
         </div>
       )}

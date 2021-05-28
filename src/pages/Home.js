@@ -16,7 +16,7 @@ function Home() {
     if (data != null) {
       setMovie(JSON.parse(data));
     } else {
-      setMovie([{ name: "Catalino Chasco" }]);
+      setMovie([{ name: "Prueba" }]);
     }
   }, []);
 
@@ -51,8 +51,9 @@ function Home() {
           fetchUrl={requests.fetchPopular}
           isLargeRow
         />
+        <Row isMyMovie fetchData={movie} title="Mis Pelis" />
 
-        {movie.map((item) => {
+        {/* {movie.map((item) => {
           return (
             <MyMoviesRow
               key={item.name}
@@ -73,7 +74,7 @@ function Home() {
               }
             />
           );
-        })}
+        })} */}
       </div>
     </div>
   );
