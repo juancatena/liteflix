@@ -6,28 +6,8 @@ import Clip from "../../assets/images/clip.svg";
 function Dropzone(props) {
   const [image, setImage] = useState("");
   const [onImage, setOnImage] = useState(false);
-  const [progress, setProgress] = useState("");
-  const [progressActive, setProgressActive] = useState(true);
-
-  /* const handleImageChange = (e) => {
-    if (e.target.files && e.target.files[0]) {
-      let reader = new FileReader();
-      reader.onerror = function (e) {};
-      reader.onprogress = function (e) {
-        setProgress(e.loaded);
-      };
-      reader.onload = function (e) {
-        setImage(e.target.result);
-        setOnImage(true);
-      };
-      reader.readAsDataURL(e.target.files[0]);
-    }
-  };
-
-  const recibeImagen = (image) => {
-    setImage(image);
-  };
- */
+  const [progress, setProgress] = useState(0);
+  const [progressActive, setProgressActive] = useState(false);
 
   useEffect(() => {
     const recibeImagen = () => {
@@ -53,21 +33,39 @@ function Dropzone(props) {
       reader.readAsDataURL(e);
     });
   }, []);
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
-  console.log(progress);
+
+  const { getRootProps, getInputProps } = useDropzone({ onDrop });
+
   return (
     <div
-      className={`dropzone ${isDragActive && "dropzone__drag"} ${
-        progressActive && "dropzone__onProgress"
+      className={`dropzone  ${progressActive && "dropzone__onProgress"} ${
+        onImage && "dropzone__onProgress"
       }`}
       {...getRootProps()}
     >
       <input {...getInputProps()} />
       {progressActive ? (
-        <progress className="dropzone__bar" value={progress} max="100">
-          <h1>{progress}</h1>
-        </progress>
-      ) : !onImage ? (
+        <div className="dropzone__content">
+          <h3 className="dropzone__barTextProgress">Cargando %{progress}</h3>
+          <div className="dropzone__bar">
+            <div
+              style={{ width: `${progress}%`, backgroundColor: "#7ed321" }}
+              className="dropzone__bar"
+            />
+          </div>
+          <h3 className="dropzone__barTextCancel">CANCELAR</h3>
+        </div>
+      ) : onImage ? (
+        <div className="dropzone__content">
+          <h3 className="dropzone__barTextProgress bold">100% Cargado</h3>
+          <div className="dropzone__bar center">
+            <div
+              style={{ width: "100%", backgroundColor: "#7ed321" }}
+              className="dropzone__bar"
+            />
+          </div>
+        </div>
+      ) : (
         <div className="dropzone__inBox">
           <img src={Clip} alt="placeholder" class="modal__clip" />
           <p className="dropzone__boxText">
@@ -75,19 +73,7 @@ function Dropzone(props) {
             arrastrarlo y soltarlo aquí
           </p>
         </div>
-      ) : (
-        <div className="modal__inBoxOn">
-          <p className="modal__boxText">
-            !Tu imagen a sido cargada{" "}
-            <p className="modal__boxTextBold marginLeft"> exitosamente!</p>
-          </p>
-        </div>
       )}
-      {/*!onImage ? (
-        
-      ) : (
-       
-      )*/}
     </div>
   );
 }

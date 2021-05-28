@@ -9,7 +9,7 @@ const Modal = (props) => {
   const [newMovieCategory, setNewMovieCategory] = useState("");
   const [image, setImage] = useState("");
   const [dropdown, setDropdown] = useState(false);
-  const [progress, setProgress] = useState("");
+  const [thankYou, setThankYou] = useState(true);
 
   const recibeImagen = (image) => {
     setImage(image);
@@ -35,17 +35,18 @@ const Modal = (props) => {
   return (
     <div className="modal">
       <div className="modal__inner">
+        {thankYou && <h3>skl;dasd</h3>}
         <span className="modal__close" onClick={props.handleClose}>
           x
         </span>
 
         <Dropzone callback={recibeImagen} />
-        {/*<progress value={progress} max="100"></progress>*/}
+
         <div className="modal__inputs">
-          <div className="modal__name">
+          <div className="modal__name ">
             <h3 className="modal__title">NOMBRE DE LA PELICULA</h3>
             <input
-              className="modal__nameInput"
+              className={`modal__nameInput ${newMovieName && "modal__nameSet"}`}
               type="text"
               value={newMovieName}
               onChange={updateNewMovieNameValue}
@@ -54,22 +55,20 @@ const Modal = (props) => {
           <div className="modal__category">
             <h3 className="modal__title">CATEGORIA</h3>
             {!dropdown ? (
-              <button onClick={handleDropdown} className="modal__button">
-                <div
-                  className={
-                    newMovieCategory === ""
-                      ? `modal__inButton`
-                      : `modal__inButton black`
-                  }
-                >
-                  <h3 className="modal__inButtonTitle">
-                    {newMovieCategory === ""
-                      ? "Selecciona una categoría"
-                      : newMovieCategory}
-                  </h3>
-                  <img src={Arrow} className="modal__arrow" alt="arrow" />
-                </div>
-              </button>
+              !newMovieCategory ? (
+                <button onClick={handleDropdown} className="modal__button">
+                  <div className="modal__inButton">
+                    <h3 className="modal__inButtonTitle">
+                      Selecciona una categoría
+                    </h3>
+                    <img src={Arrow} className="modal__arrow" alt="arrow" />
+                  </div>
+                </button>
+              ) : (
+                <h3 className="modal__categorySet" onClick={handleDropdown}>
+                  {newMovieCategory}
+                </h3>
+              )
             ) : (
               <div className="modal__dropdown">
                 <div className="modal__dropdownButtons">
@@ -148,9 +147,18 @@ const Modal = (props) => {
             )}
           </div>
         </div>
-        <button onClick={createNewMovie} className="modal__buttonUpload">
-          <h3 className="modal__buttonTitle">Subir Película</h3>
-        </button>
+        {newMovieName && newMovieCategory && image ? (
+          <button
+            onClick={createNewMovie}
+            className="modal__buttonUpload black"
+          >
+            <h3 className="modal__buttonTitle">Subir Película</h3>
+          </button>
+        ) : (
+          <button className="modal__buttonUpload">
+            <h3 className="modal__buttonTitle">Subir Película</h3>
+          </button>
+        )}
       </div>
     </div>
   );
