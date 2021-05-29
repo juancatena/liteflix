@@ -51,7 +51,7 @@ function Home() {
               fetchUrl={requests.fetchPopular}
               isLargeRow
             />
-            <Row isMyMovie fetchData={movie} title="Mis Pelis" />
+            <Row isMyMovie fetchData={movie} title="Mis Películas" />
           </div>
         </div>
       ) : (

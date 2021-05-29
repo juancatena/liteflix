@@ -8,11 +8,13 @@ import MenuItem from "../menuItem/MenuItem";
 import "./Navbar.css";
 import useWindowSize from "../../utils/useWindowSize";
 import menu from "../../assets/images/menu.svg";
+import MobileMenu from "../mobileMenu/MobileMenu";
 
 function Navbar({ handleModal }) {
   const [show, handleShow] = useState(false);
   const [addFilm, setAddFilm] = useState(false);
   const [menuAvatar, setMenuAvatar] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
   const size = useWindowSize();
 
   const onMouseEnterAdd = () => setAddFilm(true);
@@ -34,6 +36,8 @@ function Navbar({ handleModal }) {
     };
   }, []);
 
+  const handleClickMenu = () => setMobileMenu(false);
+
   return (
     <div className={`navbar ${show && "navbar__black"}`}>
       {size.width > 1080 ? (
@@ -44,7 +48,7 @@ function Navbar({ handleModal }) {
               <ul className="navbar__menu">
                 <li className="navbar__item navbar__itemActive">Inicio</li>
                 <li className="navbar__item">Series</li>
-                <li className="navbar__item">Peliculas</li>
+                <li className="navbar__item">Películas</li>
                 <li className="navbar__item">Agregados recientemente</li>
                 <li className="navbar__item">Mi Lista</li>
               </ul>
@@ -80,8 +84,22 @@ function Navbar({ handleModal }) {
         </>
       ) : (
         <>
-          <img src={menu} alt="menu" className="navbar__menuLogo" />
-          <img className="navbar__logo" src={logo} alt="" />
+          <button
+            className="navbar__buttonMennu"
+            onClick={() => setMobileMenu(!mobileMenu)}
+          >
+            <img src={menu} alt="menu" className="navbar__menuLogo" />
+          </button>
+          <img
+            className={!mobileMenu ? `navbar__logo` : `none`}
+            src={logo}
+            alt=""
+          />
+          {mobileMenu && (
+            <>
+              <MobileMenu handleClickMenu={handleClickMenu} />
+            </>
+          )}
         </>
       )}
     </div>

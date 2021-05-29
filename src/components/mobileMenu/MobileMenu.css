@@ -1,0 +1,167 @@
+.mobileMenu {
+  width: 228px;
+  height: 1894px;
+  background: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+
+.mobileMenu__logo {
+  margin: 13px 87px 22px 46px;
+}
+
+.mobileMenu__userContainer {
+  z-index: 2;
+  width: 193px;
+  height: 37px;
+  background-color: #222222;
+  border-radius: 18.5px;
+  margin: 0px 9px 0px 10px;
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mobileMenu__userOval {
+  z-index: 0;
+  width: 25px;
+  height: 25px;
+  margin: 6px 8px 6px 7px;
+  border-radius: 50%;
+  background-color: #ce00ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobileMenu__userImage {
+  filter: invert(64%) sepia(99%) saturate(419%) hue-rotate(344deg)
+    brightness(97%) contrast(98%);
+  clip-path: inset(39px 39px 39px 39px);
+}
+
+.mobileMenu__userName {
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: white;
+}
+
+.menuItem__option {
+  margin-left: 15px;
+  margin-top: 6px;
+  margin-bottom: 8.5px;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: white;
+  cursor: pointer;
+}
+
+.menuItem__line {
+  margin-left: 15px;
+  width: 193px;
+  height: 1px;
+  background-color: #222222;
+}
+
+.mobileMenu__list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 14px;
+  margin-top: 14px;
+}
+
+.mobileMenu__menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+.mobileMenu__new {
+  display: flex;
+  align-items: center;
+}
+
+.mobileMenu__item {
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+.mobileMenu__button {
+  margin-top: 22px;
+  width: 183px;
+  height: 40px;
+  background-color: red;
+  border: none;
+  color: white;
+  border-radius: 20px;
+  object-fit: contain;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  cursor: pointer;
+  padding: 0px;
+}
+
+.mobileMenu__plus {
+  width: 15.9px;
+  height: 15px;
+  object-fit: contain;
+  margin: 12px;
+}
+
+.mobileMenu__add {
+  white-space: nowrap;
+  font-family: Montserrat;
+  font-size: 14px;
+}
+
+.mobileMenu__Bell {
+  margin-right: 5px;
+}
+
+.mobileMenu__logOut {
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: white;
+  margin-top: 27px;
+}
+
+.mobileMenu__notification {
+  position: absolute;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background-color: red;
+
+  left: 23px;
+  top: 238px;
+}
