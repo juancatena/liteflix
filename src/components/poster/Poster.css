@@ -3,6 +3,7 @@
   height: 155px;
   margin-right: 30px;
   color: white;
+  margin-bottom: 10px;
 }
 
 .poster__hover {
@@ -76,4 +77,16 @@
 
 .poster--fadeBottom {
   height: 32px;
+}
+
+@media only screen and (max-width: 1080px) {
+  .poster {
+    /* width: 255px;
+    height: 155px;
+    margin-right: 30px;
+    color: white;
+    margin-bottom: 10px; */
+    width: 330.7px;
+    margin-right: 3px;
+  }
 }

@@ -2,13 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./Poster.css";
 import addList from "../../assets/images/add-list.svg";
 import playCircle from "../../assets/images/playCircle.svg";
+import MyMoviesRow from "../myMoviesRow/MyMoviesRow";
 
-function Poster({ url, title, category, data }) {
+function Poster({ url, title, category, data, content }) {
   const [hasCategory, setHasCategory] = useState("");
   const [hover, setHover] = useState(false);
   const [newMovies, setNewMovies] = useState({});
-
-  console.log("movies", data);
 
   const handleMouseEnter = () => setHover(true);
   const handleMouseLeave = () => setHover(false);
@@ -18,9 +17,15 @@ function Poster({ url, title, category, data }) {
   }, [category]);
 
   const handleClick = () => {
-    const newMovies = data.filter((mov) => mov.name !== title);
-    console.log(newMovies);
+    delete localStorage.movies.title;
   };
+
+  // onClick={() => {
+  //   const newMovies = movie.filter(
+  //     (mov) => mov.name !== item.name
+  //   );
+  //   setMovie(newMovies);
+  // }}
 
   return (
     <div
@@ -61,6 +66,7 @@ function Poster({ url, title, category, data }) {
               {hasCategory ? category : `Suspenso`}
             </h1>
           </div>
+          {content}
         </div>
       )}
     </div>

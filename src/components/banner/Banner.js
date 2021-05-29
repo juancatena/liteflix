@@ -3,10 +3,13 @@ import axios from "../../utils/axios";
 import requests from "../../utils/requests";
 import "./Banner.css";
 import plus from "../../assets/images/plus.svg";
+import addList from "../../assets/images/add-list.svg";
 import play from "../../assets/images/play.svg";
+import useWindowSize from "../../utils/useWindowSize";
 
 function Banner() {
   const [movie, setMovie] = useState({});
+  const size = useWindowSize();
 
   useEffect(() => {
     async function fetchData() {
@@ -43,19 +46,25 @@ function Banner() {
           <button className="banner__button">
             <img className="banner__play" src={play} alt="play" /> Reproducir
           </button>
-          <button className="banner__button">
-            {" "}
-            <img src={plus} alt="plus" className="banner__plus" /> Mi Lista
-          </button>
+          {size.width > 1080 ? (
+            <button className="banner__button">
+              <img src={plus} alt="plus" className="banner__plus" /> Mi Lista
+            </button>
+          ) : (
+            <img src={addList} alt="plus" className="banner__plusCircle" />
+          )}
         </div>
-        <div className="banner__description">
-          <h2 className="banner__descriptionTitle"></h2>
-          <p className="banner__descriptionText">
-            <strong> Ver temporada 1 </strong>
-            <br />
-            {movie?.overview}
-          </p>
-        </div>
+        {size.width > 1080 && (
+          <div className="banner__description">
+            {/* <h2 className="banner__descriptionTitle"></h2> */}
+            <p className="banner__descriptionText">
+              <strong> Ver temporada 1 </strong>
+              <br />
+              {truncate(movie?.overview, 300)}
+            </p>
+          </div>
+        )}
+        {size.width < 1080 && <div className="banner__gradient" />}
       </div>
     </header>
   );

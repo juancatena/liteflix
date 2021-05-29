@@ -1,6 +1,17 @@
 .row {
   margin-left: 165px;
   color: white;
+  z-index: 100;
+}
+
+.row__title {
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
 }
 
 .row__posters {
@@ -48,3 +59,32 @@
   transform: scale(1.09);
 }
 */
+
+@media only screen and (max-width: 1080px) {
+  .row {
+    /* position: relative;
+    margin-left: 165px;
+    color: white;
+    z-index: 100; */
+    position: relative;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 15px;
+    margin-right: 13px;
+  }
+  .row__title {
+    position: relative;
+  }
+
+  .row__posters {
+    /* display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    padding-bottom: 20px; */
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+  }
+}

@@ -9,3 +9,13 @@
 .cat {
   color: white;
 }
+
+.home {
+  color: white;
+}
+
+@media only screen and (max-width: 1080px) {
+  .home__rows {
+    margin-top: -57px;
+  }
+}

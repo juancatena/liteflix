@@ -6,8 +6,16 @@ import PosterLarge from "../posterLarge/PosterLarge";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
-function Row({ title, fetchUrl, isLargeRow, fetchData, isMyMovie }) {
+function Row({
+  title,
+  fetchUrl,
+  isLargeRow,
+  fetchData,
+  isMyMovie,
+  handleCaca,
+}) {
   const [movies, setMovies] = useState([]);
+  const [newMovies, setNewMovies] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -18,11 +26,9 @@ function Row({ title, fetchUrl, isLargeRow, fetchData, isMyMovie }) {
     fetchData();
   }, [fetchUrl]);
 
-  console.log(movies);
-
   return (
     <div className="row">
-      <h2>{title}</h2>
+      <h2 className="row__title">{title}</h2>
 
       <div className="row__posters">
         {isMyMovie
@@ -34,6 +40,18 @@ function Row({ title, fetchUrl, isLargeRow, fetchData, isMyMovie }) {
                   title={item.name}
                   category={item.category}
                   data={fetchData}
+                  // content={
+                  //   <button
+                  //     onClick={() => {
+                  //       const newMovies = fetchData.filter(
+                  //         (mov) => mov.name !== item.name
+                  //       );
+                  //       console.log("ACASI", newMovies);
+                  //     }}
+                  //   >
+                  //     ELMINIARRR
+                  //   </button>
+                  // }
                 />
               );
             })
