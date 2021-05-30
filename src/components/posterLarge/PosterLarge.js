@@ -4,7 +4,7 @@ import playCircle from "../../assets/images/playCircle.svg";
 import bigArrow from "../../assets/images/bigArrow.svg";
 import addList from "../../assets/images/add-list.svg";
 
-function PosterLarge({ url, title, size }) {
+function PosterLarge({ url, title }) {
   const [hover, setHover] = useState(false);
 
   const handleMouseEnter = () => setHover(true);

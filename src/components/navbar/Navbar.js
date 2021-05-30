@@ -38,6 +38,7 @@ function Navbar({ handleModal }) {
 
   const handleClickMenu = () => setMobileMenu(false);
 
+  // const handleClick = () => console.log("Button Mobile");
   return (
     <div className={`navbar ${show && "navbar__black"}`}>
       {size.width > 1080 ? (
@@ -97,7 +98,7 @@ function Navbar({ handleModal }) {
           />
           {mobileMenu && (
             <>
-              <MobileMenu handleClickMenu={handleClickMenu} />
+              <MobileMenu handleClick={handleModal} />
             </>
           )}
         </>

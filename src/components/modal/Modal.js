@@ -38,7 +38,7 @@ const Modal = (props) => {
           x
         </span>
         {!upload ? (
-          <div>
+          <div className="modal__inputsContent">
             <Dropzone callback={recibeImagen} />
             <div className="modal__inputs">
               <div className="modal__name ">
@@ -71,7 +71,6 @@ const Modal = (props) => {
           <div className="modal__uploadContainer">
             <img src={liteflix} alt="Liteflix" />
             <h1 className="modal__uploadTitle">Felicitaciones!</h1>
-
             <p className="modal__uploadDescription">{`${newMovieName} fue correctamente subido a la categoria ${newMovieCategory}`}</p>
             <button onClick={clean} className="modal__buttonClose">
               <h3 className="modal__buttonTitle">Cerrar</h3>

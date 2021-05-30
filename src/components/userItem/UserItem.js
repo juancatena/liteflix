@@ -5,7 +5,7 @@ function UserItem() {
     <div className="menuItem__top">
       <div className="menuItem__topItem1">
         <div className="menuItem__itemOval">
-          <img src={fill1} alt="fill1" className="menuItem__avatarImage" />
+          <img src="sa" alt="fill1" className="menuItem__avatarImage" />
         </div>
         <h1 className="menuItem__name">Ernesto G...</h1>
       </div>

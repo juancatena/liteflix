@@ -7,8 +7,6 @@ function MenuItem() {
 
   const handleLeave = () => setvisible(true);
 
-  /*visible ? "menuItem__invisible" :*/
-
   return (
     <div onMouseLeave={handleLeave} className="menuItem">
       <div className="menuItem__rectangle" />

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Arrow from "../../assets/images/arrow.svg";
+import useWindowSize from "../../utils/useWindowSize";
 import "./Dropdown.css";
 
 function DropdownMenu(props) {
   const [newMovieCategory, setNewMovieCategory] = useState("");
   const [dropdown, setDropdown] = useState(false);
+  const size = useWindowSize();
 
   useEffect(() => {
     const sendCategory = () => {
@@ -31,7 +33,7 @@ function DropdownMenu(props) {
           <button onClick={handleDropdown} className="dropdown__button">
             <div className="dropdown__inButton">
               <h3 className="dropdown__buttonTitle">
-                Selecciona una categoría
+                {size.width > 1080 ? "Selecciona una categoría" : "Categorías"}
               </h3>
               <img src={Arrow} className="dropdown__arrow" alt="arrow" />
             </div>

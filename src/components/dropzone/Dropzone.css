@@ -110,3 +110,27 @@
 .center {
   margin-bottom: 24px;
 }
+
+@media only screen and (max-width: 1080px) {
+  .dropzone {
+    width: 90%;
+    height: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 30px;
+    border-radius: 10px;
+    border: 1px dashed #9b9b9b;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dropzone__bar {
+    width: 100%;
+  }
+
+  .dropzone__content {
+    width: 90%;
+  }
+}

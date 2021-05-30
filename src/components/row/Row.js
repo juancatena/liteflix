@@ -4,59 +4,49 @@ import "./Row.css";
 import Poster from "../poster/Poster";
 import PosterLarge from "../posterLarge/PosterLarge";
 
-const base_url = "https://image.tmdb.org/t/p/original/";
-
-function Row({
-  title,
-  fetchUrl,
-  isLargeRow,
-  fetchData,
-  isMyMovie,
-  handleCaca,
-}) {
+function Row(props) {
   const [movies, setMovies] = useState([]);
-  const [newMovies, setNewMovies] = useState([]);
+  const [name, setName] = useState("");
 
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.get(fetchUrl);
+      const request = await axios.get(props.fetchUrl);
       setMovies(request.data.results.slice(0, 4));
       return request;
     }
     fetchData();
-  }, [fetchUrl]);
+  }, [props]);
+
+  // const handleClickPoster = () => {
+  //   console.log("Hola");
+  // };
+
+  console.log(name);
+
+  const sendName = (name) => {
+    props.callback(name);
+  };
 
   return (
     <div className="row">
-      <h2 className="row__title">{title}</h2>
+      <h2 className="row__title">{props.title}</h2>
 
       <div className="row__posters">
-        {isMyMovie
-          ? fetchData.map((item) => {
+        {props.isMyMovie
+          ? props.fetchData.map((item) => {
               return (
                 <Poster
-                  key={item.image}
+                  key={item.name}
                   url={item.image}
                   title={item.name}
                   category={item.category}
-                  data={fetchData}
-                  // content={
-                  //   <button
-                  //     onClick={() => {
-                  //       const newMovies = fetchData.filter(
-                  //         (mov) => mov.name !== item.name
-                  //       );
-                  //       console.log("ACASI", newMovies);
-                  //     }}
-                  //   >
-                  //     ELMINIARRR
-                  //   </button>
-                  // }
+                  data={props.fetchData}
+                  handleClickPoster={() => sendName(item.name)}
                 />
               );
             })
           : movies.map((movie) => {
-              return isLargeRow ? (
+              return props.isLargeRow ? (
                 <PosterLarge
                   key={movie.id}
                   url={`

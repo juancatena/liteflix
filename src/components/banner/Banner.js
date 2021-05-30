@@ -56,7 +56,6 @@ function Banner() {
         </div>
         {size.width > 1080 && (
           <div className="banner__description">
-            {/* <h2 className="banner__descriptionTitle"></h2> */}
             <p className="banner__descriptionText">
               <strong> Ver temporada 1 </strong>
               <br />

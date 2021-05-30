@@ -1,12 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./MobileMenu.css";
-import menu from "../../assets/images/menu.svg";
 import logo from "../../assets/images/liteflix.svg";
 import fill1 from "../../assets/images/fill-1.svg";
 import plus from "../../assets/images/plus.svg";
 import bell from "../../assets/images/bell.svg";
 
-function MobileMenu() {
+function MobileMenu({ handleClick }) {
   return (
     <div className="mobileMenu">
       <img src={logo} alt="logo" className="mobileMenu__logo" />
@@ -36,8 +35,8 @@ function MobileMenu() {
           <li className="mobileMenu__item">Mi Lista</li>
           <li className="mobileMenu__item">Niños</li>
         </ul>
-        <button className="mobileMenu__button hover">
-          <img className="mobileMenu__plus hover2" src={plus} alt="plus" />
+        <button className="mobileMenu__button" onClick={handleClick}>
+          <img className="mobileMenu__plus" src={plus} alt="plus" />
           <p className="mobileMenu__add"> Agregar película </p>
         </button>
         <h3 className="mobileMenu__logOut">Log Out</h3>

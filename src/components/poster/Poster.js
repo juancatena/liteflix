@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react";
 import "./Poster.css";
 import addList from "../../assets/images/add-list.svg";
 import playCircle from "../../assets/images/playCircle.svg";
-import MyMoviesRow from "../myMoviesRow/MyMoviesRow";
 
-function Poster({ url, title, category, data, content }) {
+function Poster({ url, title, category, content, handleClickPoster }) {
   const [hasCategory, setHasCategory] = useState("");
   const [hover, setHover] = useState(false);
-  const [newMovies, setNewMovies] = useState({});
+  const [name, setName] = useState("");
+
+  useEffect(() => {
+    setName(title);
+  }, [title]);
 
   const handleMouseEnter = () => setHover(true);
   const handleMouseLeave = () => setHover(false);
@@ -15,17 +18,6 @@ function Poster({ url, title, category, data, content }) {
   useEffect(() => {
     setHasCategory(category);
   }, [category]);
-
-  const handleClick = () => {
-    delete localStorage.movies.title;
-  };
-
-  // onClick={() => {
-  //   const newMovies = movie.filter(
-  //     (mov) => mov.name !== item.name
-  //   );
-  //   setMovie(newMovies);
-  // }}
 
   return (
     <div
@@ -46,7 +38,7 @@ function Poster({ url, title, category, data, content }) {
           </div>
           <div className="poster__middle">
             <img
-              onClick={hasCategory && handleClick}
+              onClick={hasCategory && handleClickPoster}
               className="poster__iconMiddle"
               src={playCircle}
               alt="play"

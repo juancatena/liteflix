@@ -17,7 +17,6 @@
   background-color: white;
   border-radius: 10px;
   border: 1px solid #999;
-  /*overflow: auto;*/
   display: flex;
   flex-direction: column;
 }
@@ -34,10 +33,6 @@
   text-align: center;
   font-size: 15px;
   font-weight: initial;
-}
-
-#upload-input {
-  display: none;
 }
 
 .modal__inputs {
@@ -183,4 +178,55 @@
 .modal__uploadInfo {
   display: flex;
   flex-direction: row;
+}
+
+@media only screen and (max-width: 1080px) {
+  .modal__inner {
+    width: 95%;
+    height: 354px;
+  }
+
+  .modal__close {
+    right: 25px;
+    top: 135px;
+  }
+
+  .modal__inputsContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal__inputs {
+    width: 90%;
+  }
+
+  .modal__name {
+    width: 50%;
+    margin-left: 0px;
+  }
+
+  .modal__title {
+    font-size: 8px;
+  }
+
+  .modal__nameInput {
+    width: 100%;
+  }
+
+  .modal__buttonUpload {
+    width: 90%;
+  }
+
+  .modal__buttonUploadOk {
+    width: 90%;
+  }
+
+  .modal__uploadTitle {
+    margin-top: 20px;
+  }
+
+  .modal__uploadDescription {
+    font-size: 15px;
+  }
 }
