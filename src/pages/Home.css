@@ -19,3 +19,8 @@
     margin-top: -57px;
   }
 }
+
+.white {
+  color: white;
+  background-color: green;
+}

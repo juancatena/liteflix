@@ -3,6 +3,7 @@ import "./PosterLarge.css";
 import playCircle from "../../assets/images/playCircle.svg";
 import bigArrow from "../../assets/images/bigArrow.svg";
 import addList from "../../assets/images/add-list.svg";
+import like from "../../assets/images/like.png";
 
 function PosterLarge({ url, title }) {
   const [hover, setHover] = useState(false);
@@ -38,8 +39,9 @@ function PosterLarge({ url, title }) {
                 </div>
                 <h1 className="posterLarge__text">Suspenso</h1>
               </div>
-              <img className="posterLarge__like" src={addList} alt="like" />
+              <img className="posterLarge__like" src={like} alt="like" />
             </div>
+
             <img className="posterLarge__arrow" src={bigArrow} alt="arrow" />
           </div>
         </div>

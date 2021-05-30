@@ -36,7 +36,7 @@ function Navbar({ handleModal }) {
     };
   }, []);
 
-  const handleClickMenu = () => setMobileMenu(false);
+  const handleClose = () => setMobileMenu(false);
 
   // const handleClick = () => console.log("Button Mobile");
   return (
@@ -98,7 +98,7 @@ function Navbar({ handleModal }) {
           />
           {mobileMenu && (
             <>
-              <MobileMenu handleClick={handleModal} />
+              <MobileMenu handleClick={handleModal} handleClose={handleClose} />
             </>
           )}
         </>

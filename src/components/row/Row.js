@@ -4,24 +4,19 @@ import "./Row.css";
 import Poster from "../poster/Poster";
 import PosterLarge from "../posterLarge/PosterLarge";
 
+const base_url = "https://image.tmdb.org/t/p/original/";
+
 function Row(props) {
   const [movies, setMovies] = useState([]);
-  const [name, setName] = useState("");
 
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(props.fetchUrl);
-      setMovies(request.data.results.slice(0, 4));
+      setMovies(request.data.results);
       return request;
     }
     fetchData();
   }, [props]);
-
-  // const handleClickPoster = () => {
-  //   console.log("Hola");
-  // };
-
-  console.log(name);
 
   const sendName = (name) => {
     props.callback(name);
@@ -45,19 +40,19 @@ function Row(props) {
                 />
               );
             })
-          : movies.map((movie) => {
+          : movies.slice(0, 4).map((movie) => {
               return props.isLargeRow ? (
                 <PosterLarge
                   key={movie.id}
                   url={`
-              https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+              ${base_url}${movie.poster_path}`}
                   title={movie?.title || movie?.name || movie?.original_name}
                 />
               ) : (
                 <Poster
                   key={movie.id}
                   url={`
-            https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
+                  ${base_url}${movie.backdrop_path}`}
                   title={movie?.title || movie?.name || movie?.original_name}
                 />
               );

@@ -3,12 +3,14 @@ import "./Modal.css";
 import Dropdown from "../dropdown/Dropdown";
 import Dropzone from "../dropzone/Dropzone";
 import liteflix from "../../assets/images/liteflix.svg";
+import useWindowSize from "../../utils/useWindowSize";
 
 const Modal = (props) => {
   const [newMovieName, setNewMovieName] = useState("");
   const [newMovieCategory, setNewMovieCategory] = useState("");
   const [image, setImage] = useState("");
   const [upload, setUpload] = useState(false);
+  const size = useWindowSize();
 
   const recibeImagen = (image) => {
     setImage(image);
@@ -42,7 +44,9 @@ const Modal = (props) => {
             <Dropzone callback={recibeImagen} />
             <div className="modal__inputs">
               <div className="modal__name ">
-                <h3 className="modal__title">NOMBRE DE LA PELICULA</h3>
+                <h3 className="modal__title">
+                  {size.width < 1080 ? `NOMBRE` : `NOMBRE DE LA PELICULA`}
+                </h3>
                 <input
                   className={`modal__nameInput ${
                     newMovieName && "modal__nameSet"
@@ -71,7 +75,11 @@ const Modal = (props) => {
           <div className="modal__uploadContainer">
             <img src={liteflix} alt="Liteflix" />
             <h1 className="modal__uploadTitle">Felicitaciones!</h1>
-            <p className="modal__uploadDescription">{`${newMovieName} fue correctamente subido a la categoria ${newMovieCategory}`}</p>
+            <p className="modal__uploadDescription">
+              <strong>{`${newMovieName} `}</strong>
+              fue correctamente subido a la categoria
+              <strong>{` ${newMovieCategory}`}</strong>
+            </p>
             <button onClick={clean} className="modal__buttonClose">
               <h3 className="modal__buttonTitle">Cerrar</h3>
             </button>

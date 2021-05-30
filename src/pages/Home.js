@@ -9,14 +9,13 @@ import useWindowSize from "../utils/useWindowSize";
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
-  const [movie, setMovie] = useState([]);
+  const [movie, setMovie] = useState(null);
+
   const size = useWindowSize();
 
   useEffect(() => {
     let data = localStorage.getItem("movies");
-
     setMovie(JSON.parse(data));
-    console.log(window.innerWidth);
   }, []);
 
   useEffect(() => {
@@ -59,12 +58,16 @@ function Home() {
               fetchUrl={requests.fetchPopular}
               isLargeRow
             />
-            <Row
-              isMyMovie
-              fetchData={movie}
-              title="Mis Películas"
-              callback={sendName}
-            />
+            {movie === null ? (
+              <h1 className="white">No tienes peliculas</h1>
+            ) : (
+              <Row
+                isMyMovie
+                fetchData={movie}
+                title="Mis Películas"
+                callback={sendName}
+              />
+            )}
           </div>
         </div>
       ) : (
@@ -81,12 +84,16 @@ function Home() {
               fetchUrl={requests.fetchPopular}
               isLargeRow
             />
-            <Row
-              isMyMovie
-              fetchData={movie}
-              title="Mis Pelis"
-              callback={sendName}
-            />
+            {movie === null ? (
+              <h1 className="white">No tienes peliculas</h1>
+            ) : (
+              <Row
+                isMyMovie
+                fetchData={movie}
+                title="Mis Películas"
+                callback={sendName}
+              />
+            )}
           </div>
         </div>
       )}
