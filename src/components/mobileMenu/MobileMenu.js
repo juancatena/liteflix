@@ -17,12 +17,12 @@ function MobileMenu({ handleClick, handleClose }) {
           <h1 className="mobileMenu__userName">Ernesto Garmendia</h1>
         </div>
 
-        <h1 className="menuItem__option">Cambiar Usuario</h1>
-        <div className="menuItem__line" />
-        <h1 className="menuItem__option">Configuración</h1>
-        <div className="menuItem__line" />
-        <h1 className="menuItem__option">Ayuda</h1>
-        <div className="menuItem__line" />
+        <h1 className="mobileMenu__option">Cambiar Usuario</h1>
+        <div className="mobileMenu__line" />
+        <h1 className="mobileMenu__option">Configuración</h1>
+        <div className="mobileMenu__line" />
+        <h1 className="mobileMenu__option">Ayuda</h1>
+        <div className="mobileMenu__line" />
 
         <div className="mobileMenu__list">
           <ul className="mobileMenu__menu">

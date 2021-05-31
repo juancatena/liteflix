@@ -10,7 +10,7 @@ import useWindowSize from "../../utils/useWindowSize";
 import menu from "../../assets/images/menu.svg";
 import MobileMenu from "../mobileMenu/MobileMenu";
 
-function Navbar({ handleModal }) {
+function Navbar({ handleModal, closeMenuAvatar }) {
   const [show, handleShow] = useState(false);
   const [addFilm, setAddFilm] = useState(false);
   const [menuAvatar, setMenuAvatar] = useState(false);
@@ -20,8 +20,8 @@ function Navbar({ handleModal }) {
   const onMouseEnterAdd = () => setAddFilm(true);
   const onMouseLeaveAdd = () => setAddFilm(false);
 
+  const closeMenu = () => setMenuAvatar(false);
   const onMouseEnterMenu = () => setMenuAvatar(true);
-  const onMouseLeaveMenu = () => setMenuAvatar(false);
 
   const handleScroll = () => {
     if (window.scrollY > 100) {
@@ -76,9 +76,9 @@ function Navbar({ handleModal }) {
                 src={avatar}
                 alt="avatar"
                 onMouseEnter={onMouseEnterMenu}
-                onMouseLeave={onMouseLeaveMenu}
+                onClick={closeMenu}
               />
-              {menuAvatar && <MenuItem />}
+              {menuAvatar && <MenuItem closeMenuAvatar={closeMenu} />}
             </div>
             <img className="navbar__menuRightArrow" src={arrow} alt="arrow" />
           </div>

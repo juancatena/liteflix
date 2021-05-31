@@ -10,6 +10,7 @@ import useWindowSize from "../utils/useWindowSize";
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
   const [movie, setMovie] = useState([{ name: "Task One" }]);
+  const [menuAvatar, setMenuAvatar] = useState(false);
 
   console.log(movie);
 
@@ -48,6 +49,8 @@ function Home() {
     console.log(movie);
   };
 
+  const closeMenuAvatar = () => setMenuAvatar(false);
+
   return (
     <div>
       {size.width < 1080 ? (
@@ -73,8 +76,8 @@ function Home() {
           </div>
         </div>
       ) : (
-        <div>
-          <Navbar handleModal={handleModal} />
+        <div onClick={closeMenuAvatar}>
+          <Navbar handleModal={handleModal} closeMenuAvatar={menuAvatar} />
           {isOpen && (
             <Modal callback={createNewMovie} handleClose={handleModal} />
           )}

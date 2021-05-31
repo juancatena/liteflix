@@ -1,14 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import "./MenuItem.css";
 import fill1 from "../../assets/images/fill-1.svg";
 
-function MenuItem() {
-  const [visible, setvisible] = useState(false);
-
-  const handleLeave = () => setvisible(true);
-
+function MenuItem({ closeMenuAvatar }) {
   return (
-    <div onMouseLeave={handleLeave} className="menuItem">
+    <div onClick={closeMenuAvatar} className="menuItem">
       <div className="menuItem__rectangle" />
       <div className="menuItem__top">
         <div className="menuItem__topItem1">

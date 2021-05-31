@@ -60,7 +60,7 @@
   color: white;
 }
 
-.menuItem__option {
+.mobileMenu__option {
   margin-left: 15px;
   margin-top: 6px;
   margin-bottom: 8.5px;
@@ -75,7 +75,7 @@
   cursor: pointer;
 }
 
-.menuItem__line {
+.mobileMenu__line {
   margin-left: 15px;
   width: 193px;
   height: 1px;

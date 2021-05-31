@@ -7,11 +7,6 @@ import like from "../../assets/images/like.png";
 function Poster({ url, title, category, content, handleClickPoster }) {
   const [hasCategory, setHasCategory] = useState("");
   const [hover, setHover] = useState(false);
-  const [name, setName] = useState("");
-
-  useEffect(() => {
-    setName(title);
-  }, [title]);
 
   const handleMouseEnter = () => setHover(true);
   const handleMouseLeave = () => setHover(false);
@@ -62,7 +57,6 @@ function Poster({ url, title, category, content, handleClickPoster }) {
               {hasCategory ? category : `Suspenso`}
             </h1>
           </div>
-          {content}
         </div>
       )}
     </div>
