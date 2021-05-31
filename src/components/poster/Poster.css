@@ -91,9 +91,9 @@
   display: flex;
 }
 
-.poster--fadeBottom {
+/* .poster--fadeBottom {
   height: 32px;
-}
+} */
 
 @media only screen and (max-width: 1080px) {
   .poster {

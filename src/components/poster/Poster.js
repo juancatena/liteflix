@@ -4,7 +4,7 @@ import addList from "../../assets/images/add-list.svg";
 import playCircle from "../../assets/images/playCircle.svg";
 import like from "../../assets/images/like.png";
 
-function Poster({ url, title, category, content, handleClickPoster }) {
+function Poster({ url, title, category, handleClickPoster }) {
   const [hasCategory, setHasCategory] = useState("");
   const [hover, setHover] = useState(false);
 
@@ -52,7 +52,6 @@ function Poster({ url, title, category, content, handleClickPoster }) {
               </div>
               <h1 className="poster__text">1h 30 min</h1>
             </div>
-
             <h1 className="poster__text">
               {hasCategory ? category : `Suspenso`}
             </h1>

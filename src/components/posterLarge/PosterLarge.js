@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./PosterLarge.css";
 import playCircle from "../../assets/images/playCircle.svg";
 import bigArrow from "../../assets/images/bigArrow.svg";
-import addList from "../../assets/images/add-list.svg";
 import like from "../../assets/images/like.png";
 
 function PosterLarge({ url, title }) {

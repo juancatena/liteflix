@@ -26,7 +26,6 @@ function MenuItem({ closeMenuAvatar }) {
           <h1 className="menuItem__name2">User 04</h1>
         </div>
       </div>
-      {/* <UserItem /> */}
       <div className="menuItem_bottom">
         <h1 className="menuItem__option">Configuración</h1>
         <div className="menuItem__line" />

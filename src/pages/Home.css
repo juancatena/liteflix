@@ -2,14 +2,6 @@
   margin-top: -115px;
 }
 
-.nombre {
-  color: white;
-}
-
-.cat {
-  color: white;
-}
-
 .home {
   color: white;
 }
@@ -18,9 +10,4 @@
   .home__rows {
     margin-top: -57px;
   }
-}
-
-.white {
-  color: white;
-  background-color: green;
 }

@@ -10,7 +10,7 @@ import useWindowSize from "../../utils/useWindowSize";
 import menu from "../../assets/images/menu.svg";
 import MobileMenu from "../mobileMenu/MobileMenu";
 
-function Navbar({ handleModal, closeMenuAvatar }) {
+function Navbar({ handleModal }) {
   const [show, handleShow] = useState(false);
   const [addFilm, setAddFilm] = useState(false);
   const [menuAvatar, setMenuAvatar] = useState(false);
@@ -38,7 +38,6 @@ function Navbar({ handleModal, closeMenuAvatar }) {
 
   const handleClose = () => setMobileMenu(false);
 
-  // const handleClick = () => console.log("Button Mobile");
   return (
     <div className={`navbar ${show && "navbar__black"}`}>
       {size.width > 1080 ? (

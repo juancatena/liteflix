@@ -9,11 +9,7 @@ import useWindowSize from "../utils/useWindowSize";
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
-  const [movie, setMovie] = useState([{ name: "Task One" }]);
-  const [menuAvatar, setMenuAvatar] = useState(false);
-
-  console.log(movie);
-
+  const [movie, setMovie] = useState([{ name: "82vgw682vgw6" }]);
   const size = useWindowSize();
 
   useEffect(() => {
@@ -21,7 +17,7 @@ function Home() {
     if (data != null) {
       setMovie(JSON.parse(data));
     } else {
-      setMovie([{ name: "Task One" }]);
+      setMovie([{ name: "82vgw682vgw6" }]);
     }
   }, []);
 
@@ -44,12 +40,8 @@ function Home() {
 
   const sendName = (name) => {
     const newMovies = movie.filter((item) => item.name !== name);
-    console.log(newMovies);
     setMovie(newMovies);
-    console.log(movie);
   };
-
-  const closeMenuAvatar = () => setMenuAvatar(false);
 
   return (
     <div>
@@ -69,15 +61,15 @@ function Home() {
             />
             <Row
               isMyMovie
-              fetchData={movie.filter((item) => item.name !== "Task One")}
+              fetchData={movie.filter((item) => item.name !== "82vgw682vgw6")}
               title="Mis Películas"
               callback={sendName}
             />
           </div>
         </div>
       ) : (
-        <div onClick={closeMenuAvatar}>
-          <Navbar handleModal={handleModal} closeMenuAvatar={menuAvatar} />
+        <div>
+          <Navbar handleModal={handleModal} />
           {isOpen && (
             <Modal callback={createNewMovie} handleClose={handleModal} />
           )}
@@ -91,7 +83,7 @@ function Home() {
             />
             <Row
               isMyMovie
-              fetchData={movie.filter((item) => item.name !== "Task One")}
+              fetchData={movie.filter((item) => item.name !== "82vgw682vgw6")}
               title="Mis Películas"
               callback={sendName}
             />

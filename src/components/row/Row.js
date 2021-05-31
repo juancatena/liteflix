@@ -8,9 +8,6 @@ const base_url = "https://image.tmdb.org/t/p/original/";
 
 function Row(props) {
   const [movies, setMovies] = useState([]);
-  const [active, setActive] = useState(false);
-  const [myMovies, setMyMovies] = useState([]);
-  console.log(props.fetchData);
 
   useEffect(() => {
     async function fetchData() {
@@ -25,15 +22,6 @@ function Row(props) {
     props.callback(name);
   };
 
-  console.log(props.fetchData, active);
-
-  useEffect(() => {
-    if (props.fetchData === []) {
-      setMyMovies(props.fetchData.filter((item) => item.name !== "Task One"));
-    }
-  }, [props.fetchData]);
-
-  console.log("yo", myMovies);
   return (
     <div className="row">
       <h2 className="row__title">{props.title}</h2>

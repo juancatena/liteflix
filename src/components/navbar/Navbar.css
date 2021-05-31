@@ -58,12 +58,14 @@
   background-color: red;
   border: none;
   color: white;
-  border-radius: 50%;
+  border-radius: 20px;
   object-fit: contain;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: width 0.5s;
+  transition-timing-function: ease-out;
 }
 
 .navbar__button:hover {
@@ -176,6 +178,10 @@
 
 .none {
   display: none;
+}
+
+.navbar__buttonMennu {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 1080px) {
