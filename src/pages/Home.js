@@ -9,13 +9,19 @@ import useWindowSize from "../utils/useWindowSize";
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
-  const [movie, setMovie] = useState(null);
+  const [movie, setMovie] = useState([{ name: "Task One" }]);
+
+  console.log(movie);
 
   const size = useWindowSize();
 
   useEffect(() => {
     let data = localStorage.getItem("movies");
-    setMovie(JSON.parse(data));
+    if (data != null) {
+      setMovie(JSON.parse(data));
+    } else {
+      setMovie([{ name: "Task One" }]);
+    }
   }, []);
 
   useEffect(() => {
@@ -23,7 +29,7 @@ function Home() {
   }, [movie]);
 
   const createNewMovie = (movieName, movieCategory, image) => {
-    if (!movie.find((movies) => movies.name === movieName)) {
+    if (!movie.find((t) => t.name === movieName)) {
       setMovie([
         ...movie,
         { name: movieName, category: movieCategory, image: image },
@@ -58,16 +64,12 @@ function Home() {
               fetchUrl={requests.fetchPopular}
               isLargeRow
             />
-            {movie === null ? (
-              <h1 className="white">No tienes peliculas</h1>
-            ) : (
-              <Row
-                isMyMovie
-                fetchData={movie}
-                title="Mis Películas"
-                callback={sendName}
-              />
-            )}
+            <Row
+              isMyMovie
+              fetchData={movie.filter((item) => item.name !== "Task One")}
+              title="Mis Películas"
+              callback={sendName}
+            />
           </div>
         </div>
       ) : (
@@ -84,16 +86,12 @@ function Home() {
               fetchUrl={requests.fetchPopular}
               isLargeRow
             />
-            {movie === null ? (
-              <h1 className="white">No tienes peliculas</h1>
-            ) : (
-              <Row
-                isMyMovie
-                fetchData={movie}
-                title="Mis Películas"
-                callback={sendName}
-              />
-            )}
+            <Row
+              isMyMovie
+              fetchData={movie.filter((item) => item.name !== "Task One")}
+              title="Mis Películas"
+              callback={sendName}
+            />
           </div>
         </div>
       )}
