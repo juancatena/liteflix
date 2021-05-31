@@ -75,6 +75,8 @@
   color: #000000;
   margin-left: 2px;
   outline: none;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .modal__nameSet {

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useSpring, animated } from "react-spring";
 import "./App.css";
 import Home from "./pages/Home";
 
@@ -9,10 +10,17 @@ function App() {
     }, 500);
   }, []);
 
+  const fade = useSpring({
+    from: {
+      opacity: 0,
+    },
+    opacity: 1,
+  });
+
   return (
-    <div className="app">
+    <animated.div style={fade} className="app">
       <Home />
-    </div>
+    </animated.div>
   );
 }
 

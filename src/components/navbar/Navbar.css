@@ -177,7 +177,7 @@
 }
 
 .none {
-  display: none;
+  visibility: hidden;
 }
 
 .navbar__buttonMennu {
@@ -189,11 +189,14 @@
     justify-content: center;
     height: 55px;
     position: absolute;
+
+    display: flex;
   }
 
   .navbar__logo {
     margin-left: 0px;
     padding: 0;
+    /* display: none; */
   }
 
   .navbar__buttonMennu {

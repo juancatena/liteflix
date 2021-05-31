@@ -95,11 +95,15 @@ function Navbar({ handleModal }) {
             src={logo}
             alt=""
           />
-          {mobileMenu && (
-            <>
-              <MobileMenu handleClick={handleModal} handleClose={handleClose} />
-            </>
-          )}
+          {/* {mobileMenu && (
+            <> */}
+          <MobileMenu
+            toggled={mobileMenu}
+            handleClick={handleModal}
+            handleClose={handleClose}
+          />
+          {/* </>
+          )} */}
         </>
       )}
     </div>

@@ -77,20 +77,32 @@
   }
 
   .posterLarge__hoverTop {
+    width: 161px;
     height: 90px;
+    top: 40px;
+    display: none;
+    background-color: red;
   }
 
   .posterLarge__hoverBottom {
+    width: 161px;
     height: 238px;
+
+    position: relative;
+    top: 90px;
   }
 
   .posterLarge__middlePart {
     display: flex;
+
+    position: absolute;
+    top: 120px;
   }
 
   .posterLarge__like {
-    margin-right: 10px;
-    margin-left: 10px;
+    position: absolute;
+    left: 120px;
+    top: 20px;
   }
 
   .posterLarge__title {
@@ -117,5 +129,13 @@
   .posterLarge__arrow {
     margin-top: 5px;
     margin-left: 62px;
+    position: absolute;
+    top: 200px;
+  }
+
+  .posterLarge__play {
+    position: absolute;
+    top: 35px;
+    left: 0px;
   }
 }

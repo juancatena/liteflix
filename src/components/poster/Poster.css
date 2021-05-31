@@ -91,10 +91,6 @@
   display: flex;
 }
 
-/* .poster--fadeBottom {
-  height: 32px;
-} */
-
 @media only screen and (max-width: 1080px) {
   .poster {
     width: 330.7px;
@@ -103,6 +99,7 @@
     height: 155px;
     color: white;
     margin-bottom: 10px;
+    transition: all 2s;
   }
 
   .poster__iconDelete {
@@ -112,9 +109,13 @@
     height: 32px;
     margin-top: 10px;
     transform: rotate(45deg);
+    position: absolute;
+    right: 37px;
   }
 
   .poster__hover {
+    position: absolute;
+    width: 330.7px;
     height: 155px;
     display: flex;
     flex-direction: column;
@@ -128,6 +129,8 @@
   .poster__top {
     display: flex;
     justify-content: flex-end;
+    position: absolute;
+    left: 240px;
   }
 
   .poster__icon {
@@ -142,11 +145,17 @@
     margin-top: 6.3px;
     margin-right: 10px;
     object-fit: contain;
+    position: absolute;
+    left: 42px;
+    top: 0.5px;
   }
 
   .poster__middle {
     display: flex;
     justify-content: center;
+    position: absolute;
+    top: 30px;
+    left: 150px;
   }
 
   .poster__iconMiddle {
@@ -157,6 +166,8 @@
     width: 100%;
     margin: 0;
     height: 100%;
+    position: absolute;
+    top: 100px;
   }
 
   .poster__title {
@@ -194,8 +205,4 @@
   .poster__bottom2 {
     display: flex;
   }
-
-  /* .poster--fadeBottom {
-    height: 32px;
-  } */
 }
