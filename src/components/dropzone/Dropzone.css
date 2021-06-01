@@ -121,6 +121,14 @@
   letter-spacing: normal;
 }
 
+.dropzone__strongText {
+  color: #0076ff;
+}
+
+.dropzone__boxClip {
+  margin-left: -50px;
+}
+
 @media only screen and (max-width: 1080px) {
   .dropzone {
     width: 90%;
@@ -142,5 +150,9 @@
 
   .dropzone__content {
     width: 90%;
+  }
+
+  .dropzone__boxClip {
+    margin-left: 0;
   }
 }

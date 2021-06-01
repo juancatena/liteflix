@@ -4,6 +4,7 @@ import Dropdown from "../dropdown/Dropdown";
 import Dropzone from "../dropzone/Dropzone";
 import liteflix from "../../assets/images/liteflix.svg";
 import useWindowSize from "../../utils/useWindowSize";
+import CloseIcon from "@material-ui/icons/Close";
 
 const Modal = (props) => {
   const [newMovieName, setNewMovieName] = useState("");
@@ -37,7 +38,7 @@ const Modal = (props) => {
     <div className="modal">
       <div className={`modal__inner ${upload && `modal__upload`}`}>
         <span className="modal__close" onClick={props.handleClose}>
-          x
+          <CloseIcon style={{ fontSize: 14 }} />
         </span>
         {!upload ? (
           <div className="modal__inputsContent">

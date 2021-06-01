@@ -83,7 +83,7 @@ function Dropzone(props) {
         </div>
       ) : (
         <div className="dropzone__inBox">
-          <img src={Clip} alt="placeholder" class="modal__clip" />
+          <img src={Clip} alt="placeholder" class="dropzone__boxClip" />
           <p className="dropzone__boxText">
             <p className="dropzone__boxTextBold">Agregar archivo</p>o
             arrastrarlo y soltarlo aquí

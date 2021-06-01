@@ -4,7 +4,7 @@ import "./Row.css";
 import Poster from "../poster/Poster";
 import PosterLarge from "../posterLarge/PosterLarge";
 
-const base_url = "https://image.tmdb.org/t/p/original/";
+const base_url = "https://image.tmdb.org/t/p/w780/";
 
 function Row(props) {
   const [movies, setMovies] = useState([]);
@@ -12,6 +12,7 @@ function Row(props) {
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(props.fetchUrl);
+      console.log(request);
       setMovies(request.data.results);
       return request;
     }

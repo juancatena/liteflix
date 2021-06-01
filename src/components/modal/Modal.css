@@ -22,17 +22,10 @@
 }
 
 .modal__close {
-  right: 323px;
-  top: 142px;
+  right: 320px;
+  top: 145px;
   position: fixed;
-  content: "x";
   cursor: pointer;
-  width: 7px;
-  height: 7px;
-  font-family: Montserrat;
-  text-align: center;
-  font-size: 15px;
-  font-weight: initial;
 }
 
 .modal__inputs {
@@ -77,6 +70,7 @@
   outline: none;
   appearance: none;
   -webkit-appearance: none;
+  border-radius: 0px !important;
 }
 
 .modal__nameSet {
@@ -190,8 +184,8 @@
   }
 
   .modal__close {
-    right: 25px;
-    top: 135px;
+    right: 26px;
+    top: 142px;
   }
 
   .modal__inputsContent {
@@ -218,6 +212,7 @@
   .modal__nameInput {
     margin-bottom: 0;
     width: 100%;
+    border-radius: 0px !important;
   }
 
   .modal__nameSet {
