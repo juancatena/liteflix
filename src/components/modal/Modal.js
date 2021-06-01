@@ -78,7 +78,7 @@ const Modal = (props) => {
             <h1 className="modal__uploadTitle">Felicitaciones!</h1>
             <p className="modal__uploadDescription">
               <strong>{`${newMovieName} `}</strong>
-              fue correctamente subido a la categoria
+              fue correctamente subido a la categoría
               <strong>{` ${newMovieCategory}`}</strong>
             </p>
             <button onClick={clean} className="modal__buttonClose">

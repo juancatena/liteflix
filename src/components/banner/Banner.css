@@ -111,17 +111,18 @@
   .banner__title {
     font-size: 72px;
     text-align: center;
-    margin-top: 10px;
-
+    margin-top: -1px;
+    line-height: 1;
     width: 100%;
   }
 
   .banner__buttons {
-    margin: 14px 0 96px 0;
+    margin: 8px 0 19px 0;
     padding: 0;
     display: flex;
     flex-direction: row;
     align-items: center;
+    text-align: center;
     justify-items: center;
   }
 

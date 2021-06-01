@@ -62,7 +62,7 @@ function Home() {
             <Row
               isMyMovie
               fetchData={movie.filter((item) => item.name !== "82vgw682vgw6")}
-              title="Mis Películas"
+              title={movie.length === 1 ? "" : "Mis Películas"}
               callback={sendName}
             />
           </div>
@@ -84,7 +84,7 @@ function Home() {
             <Row
               isMyMovie
               fetchData={movie.filter((item) => item.name !== "82vgw682vgw6")}
-              title="Mis Películas"
+              title={movie.length === 1 ? "" : "Mis Películas"}
               callback={sendName}
             />
           </div>
